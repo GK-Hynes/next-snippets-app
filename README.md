@@ -1,1 +1,1 @@
-# Next.js Snippets App
+# Next.js Code Snippets App
