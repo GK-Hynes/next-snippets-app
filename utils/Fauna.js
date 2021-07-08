@@ -3,7 +3,7 @@ const faunaClient = new faunadb.Client({ secret: process.env.FAUNA_SECRET });
 const q = faunadb.query;
 
 const getSnippets = async () => {
-  const { data } = faunaClient.query(
+  const { data } = await faunaClient.query(
     q.Map(
       q.Paginate(q.Documents(q.Collection("snippets"))),
       q.Lambda("ref", q.Get(q.Var("ref")))
