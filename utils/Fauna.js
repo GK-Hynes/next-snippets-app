@@ -18,7 +18,12 @@ const getSnippets = async () => {
 };
 
 const getSnippetById = async (id) => {
-  //TODO: get snippet by id
+  const snippet = await faunaClient.query(
+    q.Get(q.Ref(q.Collection("snippets"), id))
+  );
+  snippet.id = snippet.ref.id;
+  delete snippet.ref;
+  return snippet;
 };
 
 const createSnippet = async (code, language, description, name) => {
@@ -29,12 +34,16 @@ const createSnippet = async (code, language, description, name) => {
   );
 };
 
-const updateSnippet = async (id, code, language, name, description) => {
-  //TODO: update snippet
+const updateSnippet = async (id, code, language, description, name) => {
+  return await faunaClient.query(
+    q.Update(q.Ref(q.Collection("snippets"), id), {
+      data: { code, language, description, name }
+    })
+  );
 };
 
 const deleteSnippet = async (id) => {
-  //TODO: delete snippet
+  return await faunaClient.query(q.Delete(q.Ref(q.Collection("snippets"), id)));
 };
 
 module.exports = {
