@@ -8,15 +8,16 @@
         "start": "next start"
     },
     "dependencies": {
-        "faunadb": "^3.0.1",
+        "@auth0/nextjs-auth0": "^1.4.2",
+        "faunadb": "^4.3.0",
         "next": "^11.0.1",
-        "react": "16.14.0",
-        "react-dom": "16.14.0",
-        "react-hook-form": "^6.10.1",
-        "swr": "^0.3.8"
+        "react": "17.0.2",
+        "react-dom": "17.0.2",
+        "react-hook-form": "^7.10.1",
+        "swr": "^0.5.6"
     },
     "devDependencies": {
-        "@fullhuman/postcss-purgecss": "^3.0.0",
+        "@fullhuman/postcss-purgecss": "^4.0.3",
         "autoprefixer": "^10.2.6",
         "postcss": "^8.3.5",
         "postcss-preset-env": "^6.7.0",
