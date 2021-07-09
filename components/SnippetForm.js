@@ -3,7 +3,11 @@ import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import Link from "next/link";
 export default function SnippetForm({ snippet }) {
-  const { register, handleSubmit, errors } = useForm({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm({
     defaultValues: {
       code: snippet ? snippet.data.code : "",
       language: snippet ? snippet.data.language : "",
@@ -59,7 +63,7 @@ export default function SnippetForm({ snippet }) {
           id="name"
           name="name"
           className="w-full border bg-white rounded px-3 py-2 outline-none text-gray-700"
-          ref={register({ required: true })}
+          {...register("name", { required: true })}
         />
         {errors.name && (
           <p className="font-bold text-red-900">Name is required</p>
@@ -76,7 +80,7 @@ export default function SnippetForm({ snippet }) {
           id="language"
           name="language"
           className="w-full border bg-white rounded px-3 py-2 outline-none text-gray-700"
-          ref={register({ required: true })}
+          {...register("language", { required: true })}
         >
           <option className="py-1">JavaScript</option>
           <option className="py-1">HTML</option>
@@ -99,7 +103,7 @@ export default function SnippetForm({ snippet }) {
           rows="3"
           className="resize-none w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
           placeholder="What does the snippet do?"
-          ref={register({ required: true })}
+          {...register("description", { required: true })}
         ></textarea>
         {errors.description && (
           <p className="font-bold text-red-900">Description is required</p>
@@ -118,7 +122,7 @@ export default function SnippetForm({ snippet }) {
           rows="10"
           className="resize-none w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
           placeholder="ex. console.log('helloworld')"
-          ref={register({ required: true })}
+          {...register("code", { required: true })}
         ></textarea>
         {errors.code && (
           <p className="font-bold text-red-900">Code is required</p>
