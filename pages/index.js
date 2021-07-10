@@ -1,7 +1,8 @@
 import Head from "next/head";
+import useSWR from "swr";
 import Header from "../components/Header";
 import Snippet from "../components/Snippet";
-import useSWR from "swr";
+
 export default function Home() {
   const { data: snippets, mutate } = useSWR("/api/snippets");
   return (
