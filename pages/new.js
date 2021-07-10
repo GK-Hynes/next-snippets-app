@@ -11,7 +11,9 @@ export default function New() {
       </Head>
 
       <main className="max-w-lg mx-auto">
-        <h1 className="text-red-100 text-2xl mb-4">New Snippet</h1>
+        <h1 className="text-teal-600 text-2xl font-semibold mb-4">
+          New Snippet
+        </h1>
         <SnippetForm />
       </main>
     </div>

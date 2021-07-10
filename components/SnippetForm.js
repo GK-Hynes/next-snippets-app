@@ -68,7 +68,7 @@ export default function SnippetForm({ snippet }) {
     <form onSubmit={handleSubmit(snippet ? updateSnippet : createSnippet)}>
       <div className="mb-4">
         <label
-          className="block text-red-100 text-sm font-bold mb-1"
+          className="block text-teal-600 text-sm font-bold mb-1"
           htmlFor="name"
         >
           Name
@@ -81,12 +81,12 @@ export default function SnippetForm({ snippet }) {
           {...register("name", { required: true })}
         />
         {errors.name && (
-          <p className="font-bold text-red-900">Name is required</p>
+          <p className="font-bold text-teal-900">Name is required</p>
         )}
       </div>
       <div className="mb-4">
         <label
-          className="block text-red-100 text-sm font-bold mb-1"
+          className="block text-teal-600 text-sm font-bold mb-1"
           htmlFor="language"
         >
           Language
@@ -102,12 +102,12 @@ export default function SnippetForm({ snippet }) {
           <option className="py-1">CSS</option>
         </select>
         {errors.language && (
-          <p className="font-bold text-red-900">Language is required</p>
+          <p className="font-bold text-teal-900">Language is required</p>
         )}
       </div>
       <div className="mb-4">
         <label
-          className="block text-red-100 text-sm font-bold mb-1"
+          className="block text-teal-600 text-sm font-bold mb-1"
           htmlFor="description"
         >
           Description
@@ -121,12 +121,12 @@ export default function SnippetForm({ snippet }) {
           {...register("description", { required: true })}
         ></textarea>
         {errors.description && (
-          <p className="font-bold text-red-900">Description is required</p>
+          <p className="font-bold text-teal-900">Description is required</p>
         )}
       </div>
       <div className="mb-4">
         <label
-          className="block text-red-100 text-sm font-bold mb-1"
+          className="block text-teal-600 text-sm font-bold mb-1"
           htmlFor="code"
         >
           Code
@@ -140,22 +140,22 @@ export default function SnippetForm({ snippet }) {
           {...register("code", { required: true })}
         ></textarea>
         {errors.code && (
-          <p className="font-bold text-red-900">Code is required</p>
+          <p className="font-bold text-teal-900">Code is required</p>
         )}
       </div>
       <button
-        className="bg-red-800 hover:bg-red-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-2"
+        className="bg-teal-800 hover:bg-teal-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-2"
         type="submit"
       >
         Save
       </button>
       <Link href="/">
-        <a className="mt-3 inline-block bg-red-800 hover:bg-red-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-2">
+        <a className="mt-3 inline-block bg-teal-800 hover:bg-teal-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-2">
           Cancel
         </a>
       </Link>
       <button
-        className="bg-red-800 hover:bg-red-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-2"
+        className="bg-teal-200 hover:bg-teal-900 text-teal-900 hover:text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-2"
         type="button"
         onClick={deleteSnippet}
       >
